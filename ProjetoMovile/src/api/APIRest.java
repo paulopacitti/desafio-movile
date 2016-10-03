@@ -38,15 +38,25 @@ public class APIRest {
 	@Path("/query/2")
 	@Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
 	public Response CancelamentoOperadoraDia(){
-		String objEx = "";
-		return Response.status(Status.OK).entity(new Gson().toJson(objEx)).build();
+		try {
+			ArrayList resultantes = Dailies.getCancelationsByType();
+			return Response.status(Status.OK).entity(new Gson().toJson(resultantes)).build();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		}
 	}
 	
-	@GET
+	/*@GET
 	@Path("/query/3")
 	@Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
 	public Response ARPUOperadoraDia(){
-		String objEx = "";
-		return Response.status(Status.OK).entity(new Gson().toJson(objEx)).build();
-	}
+		try {
+			ArrayList resultantes = Dailies.getCancelationsByType();
+			return Response.status(Status.OK).entity(new Gson().toJson(resultantes)).build();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		}
+	}*/
 }

@@ -11,10 +11,16 @@ package DBOs;
  */
 public class igpm {
     int carrier_id, application_id;
-    double price_value,  carrier_tax, share_movile;
+    double price_value,  carrier_tax, share_movile, ARPU;
 
     public int getCarrier_id() {
         return carrier_id;
+    }
+    public double getARPU(){
+    	return ARPU;
+    }
+    public void setARPU(double gr){
+    	ARPU = gr * carrier_tax * share_movile;
     }
 
     public void setCarrier_id(int carrier_id) {
