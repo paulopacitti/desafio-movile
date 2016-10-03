@@ -7,85 +7,46 @@ package DBOs;
 
 /**
  *
- * @author u14191
+ * @author u14167
  */
-public class Daily
-{
-    String inserted_date;
-    String carrier_id;
-    String carrier_name;
-    String application_id;
-    String application_name;
-    String price_value;
-    String carrier_gross_revenue_value;
-    String active_base_total;
-    String new_subscriber_total;
-    String cancellation_total;
-    String cancellation_type;
 
-
-    public String getInserted_date() {
+    import java.util.Date;
+public class Daily {
+    Date inserted_date;
+    int carrier_id, application_id;
+    String carrier_name, application_name, active_base_total, new_subscriber_total, cancelation_total;
+    float price_value, carrier_gross_revenue_value;
+    char cancelation_type;
+    public Date getInserted_date() {
         return inserted_date;
     }
 
-    public Daily() 
-    {
-        this.inserted_date = "" ;
-        this.carrier_id = "";
-        this.carrier_name = "";
-        this.application_id = "";
-        this.application_name = "";
-        this.price_value = "";
-        this.carrier_gross_revenue_value = "";
-        this.active_base_total = "";
-        this.new_subscriber_total = "";
-        this.cancellation_total = "";
-        this.cancellation_type = "";
-    }
-    
-    public Daily(String[] linha, String date) 
-    {
-        this.inserted_date = date;
-        this.carrier_id = linha[0];
-        this.carrier_name = linha[1];
-        this.application_id = linha[2];
-        this.application_name = linha[3];
-        this.price_value = linha[4];
-        this.carrier_gross_revenue_value = linha[5];
-        this.active_base_total = linha[6];
-        this.new_subscriber_total = linha[7];
-        this.cancellation_total = linha[8];
-        this.cancellation_type = linha[9];
-    }
-    
-    
-
-    public void setInserted_date(String inserted_date) {
+    public void setInserted_date(Date inserted_date) {
         this.inserted_date = inserted_date;
     }
 
-    public String getCarrier_id() {
+    public int getCarrier_id() {
         return carrier_id;
     }
 
-    public void setCarrier_id(String carrier_id) {
+    public void setCarrier_id(int carrier_id) {
         this.carrier_id = carrier_id;
     }
-    
+
+    public int getApplication_id() {
+        return application_id;
+    }
+
+    public void setApplication_id(int application_id) {
+        this.application_id = application_id;
+    }
+
     public String getCarrier_name() {
-        return carrier_id;
+        return carrier_name;
     }
 
     public void setCarrier_name(String carrier_name) {
         this.carrier_name = carrier_name;
-    }
-    
-    public String getApplication_id() {
-        return application_id;
-    }
-
-    public void setApplication_id(String apllication_id) {
-        this.application_id = application_id;
     }
 
     public String getApplication_name() {
@@ -94,22 +55,6 @@ public class Daily
 
     public void setApplication_name(String application_name) {
         this.application_name = application_name;
-    }
-
-    public String getPrice_value() {
-        return price_value;
-    }
-
-    public void setPrice_value(String price_value) {
-        this.price_value = price_value;
-    }
-
-    public String getCarrier_gross_revenue_value() {
-        return carrier_gross_revenue_value;
-    }
-
-    public void setCarrier_gross_revenue_value(String carrier_gross_revenue_value) {
-        this.carrier_gross_revenue_value = carrier_gross_revenue_value;
     }
 
     public String getActive_base_total() {
@@ -129,23 +74,35 @@ public class Daily
     }
 
     public String getCancelation_total() {
-        return cancellation_total;
+        return cancelation_total;
     }
 
     public void setCancelation_total(String cancelation_total) {
-        this.cancellation_total = cancelation_total;
+        this.cancelation_total = cancelation_total;
     }
 
-    public String getCancelation_type() {
-        return cancellation_type;
+    public float getPrice_value() {
+        return price_value;
     }
 
-    public void setCancelation_type(String cancelation_type) {
-        this.cancellation_type = cancelation_type;
+    public void setPrice_value(float price_value) {
+        this.price_value = price_value;
     }
-    
-    
-   
-        
+
+    public float getCarrier_gross_revenue_value() {
+        return carrier_gross_revenue_value;
+    }
+
+    public void setCarrier_gross_revenue_value(float carrier_gross_revenue_value) {
+        this.carrier_gross_revenue_value = carrier_gross_revenue_value;
+    }
+
+    public char getCancelation_type() {
+        return cancelation_type;
+    }
+
+    public void setCancelation_type(char cancelation_type) {
+        this.cancelation_type = cancelation_type;
+    }
     
 }
