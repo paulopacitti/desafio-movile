@@ -13,6 +13,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
+import DBOs.Daily;
 
 import com.google.gson.Gson;
 
@@ -22,6 +23,7 @@ public class APIRest {
 	@Path("/query/1/{day}")
 	@Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
 	public Response BaseAtivaOperadoraDia(@PathParam("day") String dia){
+		Dailies.getByCarrier();
 		String objEx = "";
 		return Response.status(Status.OK).entity(new Gson().toJson(objEx)).build();
 	}
